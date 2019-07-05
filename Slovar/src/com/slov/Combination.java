@@ -18,23 +18,39 @@ public class Combination implements Combined{
 	}
 	
 	public String removeKey(String key){
-		return fp.removeKey(key);
+	try{
+		if("0".equals(val.addValidInteger(key))){
+		return  fp.removeKey(key)+" (Plain string)";
+		}	
+		if("1".equals(val.addValidInteger(key))){
+		return  fp.removeKey(key)+" (Numeric string)";
+		}	
+		return "String does not fit";
+	}catch(Exception e){ return "error";}
 	}
 	
 	public String addKey(String key,String value){  
 	try{
 		if("0".equals(val.addValidInteger(key))){
-		return  fp.addKey(key,value)+" Plain string";
+		return  fp.addKey(key,value)+" (Plain string)";
 		}	
 		if("1".equals(val.addValidInteger(key))){
-		return  fp.addKey(key,value)+" Numeric string";
+		return  fp.addKey(key,value)+" (Numeric string)";
 		}	
 		return "String does not fit";
 	}catch(Exception e){ return "error";}
 	}
 	
 	public String getKey(String key){ 
-			return fp.getKey(key);
+	try{
+		if("0".equals(val.addValidInteger(key))){
+		return  fp.getKey(key)+" (Plain string)";
+		}	
+		if("1".equals(val.addValidInteger(key))){
+		return  fp.getKey(key)+" (Numeric string)";
+		}	
+		return "String does not fit";
+	}catch(Exception e){ return "error";}
 	}
 	
 	public String iString(){ 
