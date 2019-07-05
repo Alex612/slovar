@@ -9,5 +9,7 @@ public interface FileProcessing{
 	
 	public String getKey(String key);
 	
-	public Map<String,String> getMap();
+	public Map<String,String> getMapNumber();
+	
+	public Map<String,String> getMapString();
 }

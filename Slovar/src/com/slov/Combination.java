@@ -13,8 +13,12 @@ public class Combination implements Combined{
 		this.fp=fp;
 	}
 	
-	public Map<String,String> getMap(){ 
-		return fp.getMap();
+	public Map<String,String> getMapString(){ 
+		return fp.getMapString();
+	}
+	
+	public Map<String,String> getMapNumber(){ 
+		return fp.getMapNumber();
 	}
 	
 	public String removeKey(String key){
@@ -25,7 +29,7 @@ public class Combination implements Combined{
 		if("1".equals(val.addValidInteger(key))){
 		return  fp.removeKey(key)+" (Numeric string)";
 		}	
-		return "String does not fit";
+		return val.addValidInteger(key);
 	}catch(Exception e){ return "error";}
 	}
 	
@@ -37,7 +41,7 @@ public class Combination implements Combined{
 		if("1".equals(val.addValidInteger(key))){
 		return  fp.addKey(key,value)+" (Numeric string)";
 		}	
-		return "String does not fit";
+		return val.addValidInteger(key);
 	}catch(Exception e){ return "error";}
 	}
 	
@@ -49,7 +53,7 @@ public class Combination implements Combined{
 		if("1".equals(val.addValidInteger(key))){
 		return  fp.getKey(key)+" (Numeric string)";
 		}	
-		return "String does not fit";
+		return val.addValidInteger(key);
 	}catch(Exception e){ return "error";}
 	}
 	

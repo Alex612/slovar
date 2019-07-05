@@ -1,4 +1,4 @@
-package com.slov;
+  package com.slov;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileWriter;
@@ -17,22 +17,44 @@ public class ProcessedFiles implements FileProcessing{
 	private String fileName="perv.txt";
 	private String directory = "resourses";	
 	
-	public void getFile(){
+	public void getFileString(){
 		try{
 		FileInputStream str = new FileInputStream(directory+"//"+fileName);
 		BufR = new BufferedReader(new InputStreamReader(str));
 		String strL;
+		map.clear();
 		while ((strL = BufR.readLine()) != null){
 			String[] count = strL.split(" ");
 			if (count.length==2){
-			map.put(count[0], count[1]);
+				if(count[0].length()==5){
+				map.put(count[0], count[1]);}
 			}	    
 			}	
 		}catch(Exception e){}	
 	}
 	
-	public Map<String,String> getMap(){
-	getFile();	
+	public void getFileNumber(){
+		try{
+		FileInputStream str = new FileInputStream(directory+"//"+fileName);
+		BufR = new BufferedReader(new InputStreamReader(str));
+		String strL;
+		map.clear();
+		while ((strL = BufR.readLine()) != null){
+			String[] count = strL.split(" ");
+			if (count.length==2){
+				if(count[0].length()==4){
+				map.put(count[0], count[1]);}
+			}	    
+			}	
+		}catch(Exception e){}	
+	}
+	
+	public Map<String,String> getMapString(){
+	getFileString();	
+	return map;}
+	
+	public Map<String,String> getMapNumber(){
+	getFileNumber();	
 	return map;}
 	
 	public void searchKey(String key){  

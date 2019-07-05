@@ -13,10 +13,11 @@ public class Menu{
 	
 	
 	public void printMenu(){
-		System.out.println("1.Reading the dictionary list");
-		System.out.println("2.Entry search by key");
-        System.out.println("3.Delete entry by key");
-	    System.out.println("4.Adding entry");
+		System.out.println("1.Reading the dictionary Plain list");
+		System.out.println("2.Reading the dictionary Numeric list");
+		System.out.println("3.Entry search by key");
+        System.out.println("4.Delete entry by key");
+	    System.out.println("5.Adding entry");
 		System.out.println("Press F to display the Menu.");
 		System.out.println("Add 2 any symbol to exit");
 	}
@@ -32,18 +33,21 @@ public class Menu{
 			
 			MenC = un.iString(); 
 			switch(MenC){
-				case "1": System.out.println("Reading the dictionary list:"); 
-				System.out.println(un.getMap()+"\n\n"+"Press F to display the Menu.");
+				case "1": System.out.println("Reading the dictionary Plain list:"); 
+				System.out.println(un.getMapString()+"\n\n"+"Press F to display the Menu.");
 				break;
-				case "2": System.out.println("Entry search by key:"); 
+				case "2": System.out.println("Reading the dictionary Numeric list:"); 
+				System.out.println(un.getMapNumber()+"\n\n"+"Press F to display the Menu.");
+				break;
+				case "3": System.out.println("Entry search by key:"); 
 				key = un.iString();
 				System.out.println(un.getKey(key)+"\n\n"+"Press F to display the Menu.");
 				break;
-				case "3": System.out.println("Delete entry by key:");  
+				case "4": System.out.println("Delete entry by key:");  
 				key = un.iString();
 				System.out.println(un.removeKey(key)+"\n\n"+"Press F to display the Menu."); 
 				break;
-				case "4": System.out.println("Adding key:"); 
+				case "5": System.out.println("Adding key:"); 
 				key = un.iString();
 				System.out.println("Adding value:");
 				value = un.iString();

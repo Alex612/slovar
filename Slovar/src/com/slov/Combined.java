@@ -3,7 +3,9 @@ import java.util.Map;
 
 public interface Combined{
 	
-	public Map<String,String> getMap();
+	public Map<String,String> getMapString();
+	
+	public Map<String,String> getMapNumber();
 	
 	public String removeKey(String key);
 	
