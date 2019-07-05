@@ -37,7 +37,6 @@ public class Menu{
 				break;
 				case "2": System.out.println("Entry search by key:"); 
 				key = un.iString();
-				System.out.println("Your key and value"); 
 				System.out.println(un.getKey(key)+"\n\n"+"Press F to display the Menu.");
 				break;
 				case "3": System.out.println("Delete entry by key:");  
