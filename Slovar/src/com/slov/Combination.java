@@ -55,7 +55,7 @@ public class Combination implements Combined{
 				return  fp.getKey(key);
 		}
 		if("2".equals(con) && "1".equals(val.addValidInteger(key)) && val.addValidKey(key,5)){
-				return  fp.getKey(key);}
+				return  fp.getKey(key);
 		}	
 		return "No Key";
 	}catch(Exception e){ return "error";}
