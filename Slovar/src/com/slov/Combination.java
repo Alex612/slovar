@@ -55,7 +55,7 @@ public class Combination implements Combined{
 				return  fp.addKey(key,value);}
 			}
 		}	
-		return "No Key";
+		return "Invalid Key";
 	}catch(Exception e){ return "error";}
 	}
 	
