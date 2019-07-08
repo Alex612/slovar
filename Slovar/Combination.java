@@ -23,10 +23,10 @@ public class Combination implements Combined{
 	
 	public String removeKey(String key,String con){
 	try{
-		if("1".equals(con) && "0".equals(val.addValidString(key)) && val.addValidKey(key,4)){
+		if("1".equals(con) && val.addValidString(key) && val.addValidKey(key,4)){
 				return fp.removeKey(key);
 		}
-		if("2".equals(con) && "1".equals(val.addValidInteger(key)) && val.addValidKey(key,5)){
+		if("2".equals(con) && val.addValidInteger(key) && val.addValidKey(key,5)){
 				return  fp.removeKey(key);
 		}	
 		return "No Key";
@@ -37,10 +37,10 @@ public class Combination implements Combined{
 	
 	public String addKey(String key,String value,String con){  
 	try{
-		if("1".equals(con) && "0".equals(val.addValidString(key)) && val.addValidKey(key,4)){
+		if("1".equals(con) && val.addValidString(key) && val.addValidKey(key,4)){
 				return  fp.addKey(key,value);
 		}
-		if("2".equals(con) && "1".equals(val.addValidInteger(key)) && val.addValidKey(key,5)){
+		if("2".equals(con) && val.addValidInteger(key) && val.addValidKey(key,5)){
 				return  fp.addKey(key,value);
 		}	
 		return "Invalid Key";
@@ -51,10 +51,10 @@ public class Combination implements Combined{
 	
 	public String getKey(String key,String con){ 
 	try{
-		if("1".equals(con) && "0".equals(val.addValidString(key)) && val.addValidKey(key,4)){
+		if("1".equals(con) && val.addValidString(key) && val.addValidKey(key,4)){
 				return  fp.getKey(key);
 		}
-		if("2".equals(con) && "1".equals(val.addValidInteger(key)) && val.addValidKey(key,5)){
+		if("2".equals(con) && val.addValidInteger(key) && val.addValidKey(key,5)){
 				return  fp.getKey(key);
 		}	
 		return "No Key";
