@@ -13,47 +13,69 @@ public class Combination implements Combined{
 		this.fp=fp;
 	}
 	
-	public Map<String,String> getMapString(){ 
-		return fp.getMapString();
+	public Map<String,String> getString(String con){ 
+		if("1".equals(con)){
+		return fp.getMapString();}
+		else
+		{return fp.getMapNumber();}
 	}
 	
-	public Map<String,String> getMapNumber(){ 
-		return fp.getMapNumber();
-	}
 	
-	public String removeKey(String key){
+	public String removeKey(String key,String con){
 	try{
-		if("0".equals(val.addValidInteger(key))){
-		return  fp.removeKey(key)+" (Plain string)";
+		if("1".equals(con)){
+			if("0".equals(val.addValidString(key))){
+				if(val.addValidKey(key,4)){
+				return fp.removeKey(key);}
+			}
+		}
+		if("2".equals(con)){
+			if("1".equals(val.addValidInteger(key))){
+				if(val.addValidKey(key,5)){
+				return  fp.removeKey(key);}
+			}
 		}	
-		if("1".equals(val.addValidInteger(key))){
-		return  fp.removeKey(key)+" (Numeric string)";
-		}	
-		return val.addValidInteger(key);
+		return "No Key";
 	}catch(Exception e){ return "error";}
 	}
 	
-	public String addKey(String key,String value){  
+	
+	
+	public String addKey(String key,String value,String con){  
 	try{
-		if("0".equals(val.addValidInteger(key))){
-		return  fp.addKey(key,value)+" (Plain string)";
+		if("1".equals(con)){
+			if("0".equals(val.addValidString(key))){
+				if(val.addValidKey(key,4)){
+				return  fp.addKey(key,value);}
+			}
+		}
+		if("2".equals(con)){
+			if("1".equals(val.addValidInteger(key))){
+				if(val.addValidKey(key,5)){
+				return  fp.addKey(key,value);}
+			}
 		}	
-		if("1".equals(val.addValidInteger(key))){
-		return  fp.addKey(key,value)+" (Numeric string)";
-		}	
-		return val.addValidInteger(key);
+		return "No Key";
 	}catch(Exception e){ return "error";}
 	}
 	
-	public String getKey(String key){ 
+	
+	
+	public String getKey(String key,String con){ 
 	try{
-		if("0".equals(val.addValidInteger(key))){
-		return  fp.getKey(key)+" (Plain string)";
+		if("1".equals(con)){
+			if("0".equals(val.addValidString(key))){
+				if(val.addValidKey(key,4)){
+				return  fp.getKey(key);}
+			}
+		}
+		if("2".equals(con)){
+			if("1".equals(val.addValidInteger(key))){
+				if(val.addValidKey(key,5)){
+				return  fp.getKey(key);}
+			}
 		}	
-		if("1".equals(val.addValidInteger(key))){
-		return  fp.getKey(key)+" (Numeric string)";
-		}	
-		return val.addValidInteger(key);
+		return "No Key";
 	}catch(Exception e){ return "error";}
 	}
 	
