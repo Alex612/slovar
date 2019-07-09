@@ -26,7 +26,7 @@ public class Menu{
 	}
 	
 	public void pMenu(){
-		System.out.println("1.Dictionary Plain1 list");
+		System.out.println("1.Dictionary Plain list");
 		System.out.println("2.Dictionary Numeric list");
 	}
 	
