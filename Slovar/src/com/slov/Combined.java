@@ -3,6 +3,8 @@ import java.util.Map;
 
 public interface Combined{
 	
+	public String listOfDictionaries(String key,String con);
+	
 	public Map<String,String> getString(String con);
 	
 	public String removeKey(String key,String con);

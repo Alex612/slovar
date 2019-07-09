@@ -17,7 +17,7 @@ public class ProcessedFiles implements FileProcessing{
 	private String fileName="perv.txt";
 	private String directory = "resourses";	
 	
-	public void getFileString(){
+	public void getFileNumber(){
 		try{
 		FileInputStream str = new FileInputStream(directory+"//"+fileName);
 		BufR = new BufferedReader(new InputStreamReader(str));
@@ -33,7 +33,7 @@ public class ProcessedFiles implements FileProcessing{
 		}catch(Exception e){}	
 	}
 	
-	public void getFileNumber(){
+	public void getFileString(){
 		try{
 		FileInputStream str = new FileInputStream(directory+"//"+fileName);
 		BufR = new BufferedReader(new InputStreamReader(str));
