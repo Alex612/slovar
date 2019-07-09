@@ -94,9 +94,9 @@ public class ProcessedFiles implements FileProcessing{
 						list.removeAll(list);
 						BufW.flush();			
 			            BufW.close();
-				        return "Delete";}}}	
-			return "No Kay";
-			}catch(Exception e){return "Error";}		
+				        return Const.DELETE;}}}	
+			return Const.NO_KEY;
+			}catch(Exception e){return Const.ERROR;}		
 	}
 	
 	
@@ -110,14 +110,14 @@ public class ProcessedFiles implements FileProcessing{
 			if (count.length==2){
 				String st=count[0];
 				if (st.equals(key)){
-				return "Key already exists";	
+				return Const.EXIST_KEY;	
 			}}}	
 			BufferedWriter BufW  = new BufferedWriter(new FileWriter(directory+"//"+fileName, true));
 			BufW.write(key+" "+value+"\n");		
             BufW.flush();			
 			BufW.close();
-			return "Entry added";	
-				} catch (Exception e){return "Error";}
+			return Const.ADD;	
+				} catch (Exception e){return Const.ERROR;}
 				
 	}	
 	
@@ -134,7 +134,7 @@ public class ProcessedFiles implements FileProcessing{
 				if (st.equals(key)){
 				return count[0] + " = " + count[1];}}		    
 		}
-        return "No Key and Value";			
-	    }catch(Exception e){return "Error";}
+        return Const.NO_KEY;			
+	    }catch(Exception e){return Const.ERROR;}
 	}
 }

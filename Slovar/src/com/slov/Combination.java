@@ -15,20 +15,20 @@ public class Combination implements Combined{
 	}
 	
 	public Map<String,String> getString(String con){ 
-		if("1".equals(con)){
+		if(Integer.parseInt(con)==1){
 		return fp.getMapString();}
 		else
 		{return fp.getMapNumber();}
 	}
 	
 	public String listOfDictionaries(String key,String con){
-		if ("1".equals(con)){
+		if (Integer.parseInt(con)==1){
 			return val1.validateKey(key);
 		}
-		if ("2".equals(con)){
+		if (Integer.parseInt(con)==2){
 			return val2.validateKey(key);
 		}
-		return "No list";
+		return Const.ERROR;
 	}
 	
 	public String removeKey(String key,String con){
@@ -37,7 +37,7 @@ public class Combination implements Combined{
 			return fp.removeKey(key);
 		}	
 		return listOfDictionaries(key,con);
-	}catch(Exception e){ return "error";}
+	}catch(Exception e){ return Const.ERROR;}
 	}
 	
 	
@@ -48,7 +48,7 @@ public class Combination implements Combined{
 			return  fp.addKey(key,value);
 		}	
 		return listOfDictionaries(key,con);
-	}catch(Exception e){ return "error";}
+	}catch(Exception e){ return Const.ERROR;}
 	}
 	
 	
@@ -60,7 +60,7 @@ public class Combination implements Combined{
 		}	
 		return listOfDictionaries(key,con);
 		
-	}catch(Exception e){ return "error";}
+	}catch(Exception e){ return Const.ERROR;}
 	}
 	
 	public String iString(){ 

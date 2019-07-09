@@ -3,12 +3,12 @@ public class PlainValidation implements Validating{
 	PlainValidation(){}
 	
 	public String validateKey(String key){
-		if(key.matches("[a-zA-Z]+")){
-		if(key.length() == 4){
+		if(key.matches(Const.V_PL)){
+		if(key.length() == Const.I_PL){
 				 return key;
 		}
-		return "Invalid length";
+		return Const.SIZE_PLAIN_ERROR;
 		}
-		return "Invalid characters";
+		return Const.INVALID_DICTIONARY_CHARACTERS;
 	}
 }

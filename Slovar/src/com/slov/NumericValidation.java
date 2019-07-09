@@ -3,12 +3,12 @@ public class NumericValidation implements Validating{
 	NumericValidation(){}
 	
 	public String validateKey(String key){
-		if(key.matches("[0-9]+")){
-		if(key.length() == 5){
+		if(key.matches(Const.V_NUM)){
+		if(key.length() == Const.I_NUM){
 				 return key;
 		}
-		return "Invalid length";
+		return Const.SIZE_NUMERIC_ERROR;
 		}
-		return "Invalid characters";
+		return Const.INVALID_DICTIONARY_CHARACTERS;
 	}
 }

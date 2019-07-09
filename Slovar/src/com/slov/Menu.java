@@ -7,7 +7,7 @@ import java.util.*;
 public class Menu{ 
 	private String MenC="";
 	private String MenD="";
-	private String key,value,con;
+	private String key,value;
 	private Combined un;
 	private String c="";
 	private boolean pr = true;
@@ -39,7 +39,6 @@ public class Menu{
 		
 		while(true){
 		pMenu();
-		c="";
 		MenD = un.iString(); 
 		switch(MenD){
 			case "1": c = "1"; pr = true; printMenu(); break;
@@ -52,25 +51,21 @@ public class Menu{
 			MenC = un.iString(); 
 			switch(MenC){
 				case "1": System.out.println("Reading the dictionary List:"); 
-				con=c;
-				System.out.println(un.getString(con)+"\n\n"+"Press F to display the Menu.");
+				System.out.println(un.getString(c)+"\n\n"+"Press F to display the Menu.");
 				break;
 				case "2": System.out.println("Entry search by key:"); 
 				key = un.iString();
-				con=c;
-				System.out.println(un.getKey(key,con)+"\n\n"+"Press F to display the Menu.");
+				System.out.println(un.getKey(key,c)+"\n\n"+"Press F to display the Menu.");
 				break;
 				case "3": System.out.println("Delete entry by key:");  
 				key = un.iString();
-				con=c;
-				System.out.println(un.removeKey(key,con)+"\n\n"+"Press F to display the Menu."); 
+				System.out.println(un.removeKey(key,c)+"\n\n"+"Press F to display the Menu."); 
 				break;
 				case "4": System.out.println("Adding key:"); 
 				key = un.iString();
 				System.out.println("Adding value:");
 				value = un.iString();
-				con=c;
-				System.out.println(un.addKey(key, value,con)+"\n\n"+"Press F to display the Menu.");
+				System.out.println(un.addKey(key, value,c)+"\n\n"+"Press F to display the Menu.");
 				break;
 				case "5":pr = false; break;
 				case "F":printMenu();
