@@ -57,7 +57,7 @@ public class Combination implements Combined {
 
     public String getKey(String key, String c) {
         try {
-            if ((key.length() == Const.I_PL&&Integer.parseInt(c) == 0)||(key.length() == Const.I_NUM&&Integer.parseInt(c) == 1)) {
+            if ((key.length() == Const.I_PL && Integer.parseInt(c) == 0) || (key.length() == Const.I_NUM && Integer.parseInt(c) == 1)) {
                 return fp.getKey(key);
             }
             return Const.NO_KEY;
