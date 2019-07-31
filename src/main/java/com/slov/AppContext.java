@@ -6,27 +6,27 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class AppContext {
     @Bean
-    public ProcessedFiles fp(){
+    public ProcessedFiles fp() {
         return new ProcessedFiles();
     }
 
     @Bean
-    public PlainValidation plainValidation(){
+    public PlainValidation plainValidation() {
         return new PlainValidation();
     }
 
     @Bean
-    public NumericValidation numericValidation(){
+    public NumericValidation numericValidation() {
         return new NumericValidation();
     }
 
     @Bean
-    public Combination un(){
-        return new Combination(numericValidation(),plainValidation(),fp());
+    public Combination un() {
+        return new Combination(numericValidation(), plainValidation(), fp());
     }
 
     @Bean
-    public Menu menu(){
+    public Menu menu() {
         return new Menu(un());
     }
 }

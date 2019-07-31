@@ -1,10 +1,6 @@
 package com.slov;
 
-
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
-import java.util.List;
+//import java.util.List;
 
 import java.util.Map;
 
@@ -15,15 +11,14 @@ public class Combination implements Combined {
     private PlainValidation plainValidation;
 
 
-
-    public Combination(NumericValidation numericValidation,PlainValidation plainValidation, ProcessedFiles fp) {
+    public Combination(NumericValidation numericValidation, PlainValidation plainValidation, ProcessedFiles fp) {
         this.numericValidation = numericValidation;
         this.plainValidation = plainValidation;
         this.fp = fp;
     }
 
     public Map<String, String> getString(Integer type) {
-            return fp.getMap(type);
+        return fp.getMap(type);
 
     }
 

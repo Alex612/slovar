@@ -44,12 +44,12 @@ public class Menu {
             menuD = iString();
             switch (menuD) {
                 case "1":
-                    type=0;
+                    type = 0;
                     pr = true;
                     printMenu();
                     break;
                 case "2":
-                    type=1;
+                    type = 1;
                     pr = true;
                     printMenu();
                     break;
