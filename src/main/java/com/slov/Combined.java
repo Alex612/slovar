@@ -4,13 +4,13 @@ import java.util.Map;
 
 public interface Combined {
 
-    String listOfValidation(String key, String c);
+    String listOfValidation(String key, Integer type);
 
-    Map<String, String> getString(String c);
+    Map<String, String> getString(Integer type);
 
-    String removeKey(String key, String c);
+    String removeKey(String key, Integer type);
 
-    String addKey(String key, String value, String c);
+    String addKey(String key, String value, Integer type);
 
-    String getKey(String key, String c);
+    String getKey(String key, Integer type);
 }

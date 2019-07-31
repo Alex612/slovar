@@ -7,8 +7,8 @@ public class Menu {
     private String menuC = "";
     private String menuD = "";
     private String key, value;
+    private Integer type;
     private Combined un;
-    private String c;
     private boolean pr = true;
     private static Scanner sc = new Scanner(System.in);
 
@@ -44,12 +44,12 @@ public class Menu {
             menuD = iString();
             switch (menuD) {
                 case "1":
-                    c = "0";
+                    type=0;
                     pr = true;
                     printMenu();
                     break;
                 case "2":
-                    c = "1";
+                    type=1;
                     pr = true;
                     printMenu();
                     break;
@@ -59,24 +59,24 @@ public class Menu {
                 switch (menuC) {
                     case "1":
                         System.out.println("Reading the dictionary List:");
-                        System.out.println(un.getString(c) + "\n\n" + "Press F to display the Menu.");
+                        System.out.println(un.getString(type) + "\n\n" + "Press F to display the Menu.");
                         break;
                     case "2":
                         System.out.println("Entry search by key:");
                         key = iString();
-                        System.out.println(un.getKey(key, c) + "\n\n" + "Press F to display the Menu.");
+                        System.out.println(un.getKey(key, type) + "\n\n" + "Press F to display the Menu.");
                         break;
                     case "3":
                         System.out.println("Delete entry by key:");
                         key = iString();
-                        System.out.println(un.removeKey(key, c) + "\n\n" + "Press F to display the Menu.");
+                        System.out.println(un.removeKey(key, type) + "\n\n" + "Press F to display the Menu.");
                         break;
                     case "4":
                         System.out.println("Adding key:");
                         key = iString();
                         System.out.println("Adding value:");
                         value = iString();
-                        System.out.println(un.addKey(key, value, c) + "\n\n" + "Press F to display the Menu.");
+                        System.out.println(un.addKey(key, value, type) + "\n\n" + "Press F to display the Menu.");
                         break;
                     case "5":
                         pr = false;

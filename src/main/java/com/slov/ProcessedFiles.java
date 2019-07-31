@@ -13,14 +13,18 @@ import java.util.List;
 
 public class ProcessedFiles implements FileProcessing {
     private BufferedReader bufR;
-    private Map<String, String> map = new HashMap<String, String>();
+    private Map<String, String> map = new HashMap<>();
     private List<String> list = new ArrayList<>();
     private String fileName = "perv.txt";
     private String directory = "resourses";
 
 
     public ProcessedFiles() {
+    }
 
+    public Map<String,String> getMap(Integer type){
+        if (type==0){ getFileString(); return map;}
+        else { getFileNumber(); return map;}
     }
 
 
@@ -32,15 +36,18 @@ public class ProcessedFiles implements FileProcessing {
             map.clear();
             while ((strL = bufR.readLine()) != null) {
                 String[] count = strL.split(" ");
-                if (count.length == 2) {
+                if (count.length == 3) {
                     if (count[0].length() == Const.I_NUM) {
-                        map.put(count[0], count[1]);
+                        map.put(count[0],  count[1]);
                     }
                 }
             }
         } catch (Exception e) {
         }
     }
+
+
+
 
     public void getFileString() {
         try {
@@ -50,7 +57,7 @@ public class ProcessedFiles implements FileProcessing {
             map.clear();
             while ((strL = bufR.readLine()) != null) {
                 String[] count = strL.split(" ");
-                if (count.length == 2) {
+                if (count.length == 3) {
                     if (count[0].length() == Const.I_PL) {
                         map.put(count[0], count[1]);
                     }
@@ -58,16 +65,6 @@ public class ProcessedFiles implements FileProcessing {
             }
         } catch (Exception e) {
         }
-    }
-
-    public Map<String, String> getMapString() {
-        getFileString();
-        return map;
-    }
-
-    public Map<String, String> getMapNumber() {
-        getFileNumber();
-        return map;
     }
 
     public void searchKey(String key) {
@@ -78,17 +75,16 @@ public class ProcessedFiles implements FileProcessing {
             while ((strL = bufR.readLine()) != null) {
                 String[] count = strL.split(" ");
                 String line;
-                if (count.length == 2) {
+                if (count.length == 3) {
                     String st = count[0];
                     if (!st.equals(key)) {
-                        line = count[0] + " " + count[1];
+                        line = count[0] + " " + count[1] + " " + count[3];
                         list.add(line);
                     }
                 }
             }
         } catch (Exception e) {
         }
-
     }
 
     public String removeKey(String key) {
@@ -98,7 +94,7 @@ public class ProcessedFiles implements FileProcessing {
             String strL;
             while ((strL = bufR.readLine()) != null) {
                 String[] count = strL.split(" ");
-                if (count.length == 2) {
+                if (count.length == 3) {
                     String st = count[0];
                     if (st.equals(key)) {
                         BufferedWriter BufW = new BufferedWriter(new FileWriter(directory + "//" + fileName, true));
@@ -123,14 +119,14 @@ public class ProcessedFiles implements FileProcessing {
     }
 
 
-    public String addKey(String key, String value) {
+    public String addKey(String key, String value,Integer type) {
         try {
             FileInputStream str = new FileInputStream(directory + "//" + fileName);
             bufR = new BufferedReader(new InputStreamReader(str));
             String strL;
             while ((strL = bufR.readLine()) != null) {
                 String[] count = strL.split(" ");
-                if (count.length == 2) {
+                if (count.length == 3) {
                     String st = count[0];
                     if (st.equals(key)) {
                         return Const.EXIST_KEY;
@@ -138,7 +134,7 @@ public class ProcessedFiles implements FileProcessing {
                 }
             }
             BufferedWriter BufW = new BufferedWriter(new FileWriter(directory + "//" + fileName, true));
-            BufW.write(key + " " + value + "\n");
+            BufW.write(key + " " + value + type +"\n");
             BufW.flush();
             BufW.close();
             return Const.ADD;
@@ -156,7 +152,7 @@ public class ProcessedFiles implements FileProcessing {
             String strL;
             while ((strL = bufR.readLine()) != null) {
                 String[] count = strL.split(" ");
-                if (count.length == 2) {
+                if (count.length == 3) {
                     String st = count[0];
                     if (st.equals(key)) {
                         return count[0] + " = " + count[1];
